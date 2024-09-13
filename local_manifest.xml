@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+
+<!-- Remotes -->
+	<remote name="ghub" fetch="https://github.com" />
+	<remote name="gta" fetch="https://gitea.com" />
+
+
+<!-- Device_Trees -->
+	<project path="device/xiaomi/munch" name="DeadlyShroud/dt" remote="ghub" revision="main" clone-depth="1" />
+	<project path="device/xiaomi/sm8250-common" name="DeadlyShroud/cvt" remote="ghub" revision="main" clone-depth="1" />
+
+<!-- Vendor_Trees -->
+	<project path="vendor/xiaomi/munch" name="deadlyshroud/vt" remote="gta" revision="main" clone-depth="1" />
+	<project path="vendor/xiaomi/sm8250-common" name="deadlyshroud/cvt" remote="gta" revision="main" clone-depth="1" />
+
+<!-- Kernel_Tree -->
+	<project path="kernel/xiaomi/sm8250" name="EmanuelCN/kernel_xiaomi_sm8250" remote="ghub" revision="munch" clone-depth="1" />
+
+<!-- Meme_Camera -->
+        <project path="vendor/xiaomi/miuicamera" name="hdzungx/android_vendor_xiaomi_miuicamera" remote="gta" revision="uqpr3" clone-depth="1" />
+
+<!-- Viper4_AndroidFX -->
+        <project path="packages/apps/ViPER4AndroidFX" name="TogoFire/packages_apps_ViPER4AndroidFX" remote="ghub" revision="v4a" clone-depth="1" />
+
+<!-- K-Profiles -->
+        <project path="packages/apps/KProfiles" name="yaap/packages_apps_KProfiles" remote="ghub" revision="fourteen" clone-depth="1" />
+
+<!-- Extras -->
+        <project path="hardware/qcom-caf/sm8250/display" name="hdzungx/android_hardware_qcom-caf_sm8250_display" remote="ghub" revision="uqpr3" clone-depth="1" />
+	<project path="hardware/xiaomi" name="crdroidandroid/android_hardware_xiaomi" remote="ghub" revision="14.0" clone-depth="1" />
+
+
+
+</manifest>
