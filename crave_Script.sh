@@ -51,7 +51,6 @@ sed -i 's/android:minSdkVersion="19"/android:minSdkVersion="21"/' prebuilts/sdk/
 #Start Building
 source build/envsetup.sh
 lunch lineage_munch-userdebug
-gk -s
 make installclean
 export TZ=Asia/Kolkata
 mka everest
