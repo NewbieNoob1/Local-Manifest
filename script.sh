@@ -10,11 +10,12 @@ repo init -u https://github.com/ProjectEverest/manifest -b 14 --git-lfs --depth=
 
 
 # DT & VT & KT
-git clone -b everest https://github.com/NewbieNoob1/dt.git device/xiaomi/munch
-git clone -b everest https://github.com/NewbieNoob1/cdt.git device/xiaomi/sm8250-common
-git clone -b main https://gitea.com/deadlyshroud/vt.git vendor/xiaomi/munch
-git clone -b main https://gitea.com/deadlyshroud/cvt.git vendor/xiaomi/sm8250-common
-git clone https://github.com/EmanuelCN/kernel_xiaomi_sm8250.git -b munch kernel/xiaomi/sm8250
+git clone -b everest https://github.com/NewbieNoob1/dt.git --depth 1 device/xiaomi/munch
+git clone -b everest https://github.com/NewbieNoob1/cdt.git --depth 1 device/xiaomi/sm8250-common
+git clone -b main https://gitea.com/deadlyshroud/vt.git --depth 1 vendor/xiaomi/munch
+git clone -b main https://gitea.com/deadlyshroud/cvt.git --depth 1 vendor/xiaomi/sm8250-common
+#git clone https://github.com/EmanuelCN/kernel_xiaomi_sm8250.git -b munch kernel/xiaomi/sm8250
+git clone -b lineage-21 https://github.com/LineageOS/android_kernel_xiaomi_sm8250.git --depth 1 kernel/xiaomi/sm8250
 cd kernel/xiaomi/sm8250
 git submodule init && git submodule update 
 rm -rf KernelSU/userspace/su
