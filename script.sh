@@ -4,18 +4,17 @@ rm -rf vendor/xiaomi/munch
 rm -rf vendor/xiaomi/sm8250-common
 rm -rf kernel/xiaomi/sm8250
 
-# Initiating the Everest OS
-repo init -u https://github.com/ProjectEverest/manifest -b 14 --git-lfs --depth=1
+# Initiating the Rising OS
+repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs --depth=1
 /opt/crave/resync.sh
 
 
 # DT & VT & KT
-git clone -b everest https://github.com/NewbieNoob1/dt.git --depth 1 device/xiaomi/munch
-git clone -b everest https://github.com/NewbieNoob1/cdt.git --depth 1 device/xiaomi/sm8250-common
+git clone -b main https://github.com/DeadlyShroud/dt.git --depth 1 device/xiaomi/munch
+git clone -b main https://github.com/DeadlyShroud/cvt.git --depth 1 device/xiaomi/sm8250-common
 git clone -b main https://gitea.com/deadlyshroud/vt.git --depth 1 vendor/xiaomi/munch
 git clone -b main https://gitea.com/deadlyshroud/cvt.git --depth 1 vendor/xiaomi/sm8250-common
-#git clone https://github.com/EmanuelCN/kernel_xiaomi_sm8250.git -b munch kernel/xiaomi/sm8250
-git clone -b lineage-21 https://github.com/LineageOS/android_kernel_xiaomi_sm8250.git --depth 1 kernel/xiaomi/sm8250
+git clone https://github.com/EmanuelCN/kernel_xiaomi_sm8250.git -b munch kernel/xiaomi/sm8250
 cd kernel/xiaomi/sm8250
 git submodule init && git submodule update 
 rm -rf KernelSU/userspace/su
@@ -50,8 +49,6 @@ sed -i 's/android:minSdkVersion="19"/android:minSdkVersion="21"/' prebuilts/sdk/
 
 
 #Start Building
-source build/envsetup.sh
-lunch lineage_munch-userdebug
-make installclean
-export TZ=Asia/Kolkata
-mka everest
+. build/envsetup.sh
+riseup munch userdebug
+rise b
