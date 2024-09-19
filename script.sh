@@ -14,12 +14,13 @@ git clone -b main https://github.com/DeadlyShroud/dt.git --depth 1 device/xiaomi
 git clone -b main https://github.com/DeadlyShroud/cvt.git --depth 1 device/xiaomi/sm8250-common
 git clone -b main https://gitea.com/deadlyshroud/vt.git --depth 1 vendor/xiaomi/munch
 git clone -b main https://gitea.com/deadlyshroud/cvt.git --depth 1 vendor/xiaomi/sm8250-common
-git clone https://github.com/EmanuelCN/kernel_xiaomi_sm8250.git -b munch kernel/xiaomi/sm8250
-cd kernel/xiaomi/sm8250
-git submodule init && git submodule update 
-rm -rf KernelSU/userspace/su
+#git clone https://github.com/EmanuelCN/kernel_xiaomi_sm8250.git -b munch kernel/xiaomi/sm8250
+git clone -b lineage-21 https://github.com/LineageOS/android_kernel_xiaomi_sm8250.git --depth 1 kernel/xiaomi/sm8250
+#cd kernel/xiaomi/sm8250
+#git submodule init && git submodule update 
+#rm -rf KernelSU/userspace/su
 # Go back to the original directory
-cd ../../..
+#cd ../../..
 
 # Meme Cam & ViperFX & KProfiles
 git clone https://gitea.com/hdzungx/android_vendor_xiaomi_miuicamera.git -b uqpr3 vendor/xiaomi/miuicamera
@@ -40,6 +41,7 @@ cd clang-neutron
 curl -LO "https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman"
 chmod +x antman
 ./antman -S=05012024
+./antman --patch=glibc
 # Go back to the original directory again
 cd ../../../../..
 
