@@ -51,3 +51,8 @@ cd ../../../../..
 
 # Modify the AndroidManifest.xml
 sed -i 's/android:minSdkVersion="19"/android:minSdkVersion="21"/' prebuilts/sdk/current/androidx/m2repository/androidx/preference/preference/1.3.0-alpha01/manifest/AndroidManifest.xml
+
+#Start Building
+. build/envsetup.sh
+riseup munch userdebug
+rise b
