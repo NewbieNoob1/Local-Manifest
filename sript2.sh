@@ -11,10 +11,6 @@ repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs
 # Trees
 git clone https://github.com/NewbieNoob1/device_xiaomi_munch.git --depth=1 -b 14-rising device/xiaomi/munch 
 git clone https://github.com/NewbieNoob1/device_xiaomi_sm8250-common.git --depth=1 -b 14-rising device/xiaomi/sm8250-common
-cd frameworks/native
-git fetch https://github.com/Project-PixelStar/frameworks_native
-git cherry-pick 21bd93f82538a10df34e0747e6326a74a3b1336b
-cd ../../
 # Clone common repositories
 rm -rf hardware/xiaomi
 git clone https://github.com/Mudit200408/hardware_xiaomi --depth=1 hardware/xiaomi
@@ -30,12 +26,6 @@ git clone https://github.com/Project-PixelStar/hardware_qcom-caf_sm8250_display 
 
 # Clone and setup kernel
 git clone https://github.com/kvsnr113/xiaomi_sm8250_kernel --depth=1 kernel/xiaomi/sm8250
-cd kernel/xiaomi/sm8250
-git submodule init && git submodule update 
-rm -rf KernelSU/userspace/su
-
-# Go back to the original directory
-cd ../../..
 
 # Setup Clang toolchain
 cd prebuilts/clang/host/linux-x86
