@@ -27,12 +27,6 @@ git clone https://github.com/Project-PixelStar/hardware_qcom-caf_sm8250_display 
 
 # Clone and setup kernel
 git clone https://github.com/kvsnr113/xiaomi_sm8250_kernel --depth=1 kernel/xiaomi/sm8250
-cd kernel/xiaomi/sm8250
-git submodule init && git submodule update 
-rm -rf KernelSU/userspace/su
-
-# Go back to the original directory
-cd ../../..
 
 # Setup Clang toolchain
 cd prebuilts/clang/host/linux-x86
@@ -52,4 +46,5 @@ sed -i 's/android:minSdkVersion="19"/android:minSdkVersion="21"/' prebuilts/sdk/
 #Start Building
 . build/envsetup.sh
 riseup munch userdebug
+gk -s
 rise b
