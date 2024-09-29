@@ -1,3 +1,5 @@
+#!/bin/bash
+
 rm -rf device/xiaomi/munch
 rm -rf device/xiaomi/sm8250-common
 rm -rf vendor/xiaomi/munch
